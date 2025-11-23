@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Objects</title>
+</head>
+<body>
+    <script>
+        //Dot notation
+        const product = {
+            name: 'socks',
+            price: 1090,
+            ['delivery-time']: '1day',
+            rating: {
+                stars: 4.5,
+                count: 87
+            },
+            fun : function function1() {
+                console.log('funciton inside the object');
+            }
+        };
+        console.log(product);
+        console.log(product.name);
+        console.log(product.price);
+
+        product.newProperty = true;
+        console.log(product.newProperty);
+        console.log(product);
+
+        delete product.newProperty;
+        console.log(product);
+
+        // Square Bracekts
+        console.log(product['name']); // Used in cases like product.delivery-time; which won't give output as - sign is treated as subtraction in this case
+        console.log(product['delivery-time']);
+        product.fun(); // A function inside and object is called method, here fun() is a method
+    </script>
+</body>
+</html>

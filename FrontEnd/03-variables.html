@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Variables</title>
+</head>
+
+<body>
+    <p>Cart Quantity</p>
+
+    <button onclick="
+  console.log('Cart quantity = '+cartQuantity);
+  ">Show Quantity</button>
+
+    <button onclick="
+  cartQuantity = cartQuantity+1;
+  console.log('Cart quantity increased by 1');
+  console.log('Cart quantity = '+cartQuantity);
+  ">Add to Cart</button>
+
+
+    <button onclick="
+  cartQuantity = cartQuantity+2;
+  console.log('Cart quantity increased by 2');
+  console.log('Cart quantity = '+cartQuantity);
+  ">+2</button>
+
+    <button onclick="
+  cartQuantity = cartQuantity+3;
+  console.log('Cart quantity increased by 3');
+  console.log('Cart quantity = '+cartQuantity);
+  ">+3</button>
+
+    <button onclick="
+  cartQuantity = 0;
+  console.log('Cart quantity reset to 0');
+  console.log('Cart quantity = '+cartQuantity);
+  ">Reset Cart</button>
+
+    <script>
+        let cartQuantity = 0;
+        const variable1 = 5;
+        var variable3 = 10; //some issues so we don't use that anymore.
+        console.log(typeof(3));
+    </script>
+</body>
+
+</html>

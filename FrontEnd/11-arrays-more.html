@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        const array1 = [1, 2, 3, 4, 5];
+        const array2 = array1.slice();//Generates a copy of the values
+        array1.push(2);
+        console.log(array1);
+        console.log(array2);
+        const [fistValue, secondValue] = [1, 2, 3];
+        console.log(`${fistValue} ${secondValue}`); //Destructuring
+
+        //break is also available for loops in javascript
+        //continue helps us skip one itteration of the loop
+        // for (let i = 1; i <= 10; i++) {
+        //     if (i == 3)
+        //         continue;
+        //     console.log(i);
+        // }
+
+        let i = 1;
+        while (i <= 10) {
+            if (i % 3 === 0){
+                i++;
+                continue;
+            }
+            console.log(i);
+            i++;
+        }
+
+        //How to use loops with functions
+        const nums=[1,0,3];
+        doubleArray(nums);
+        function doubleArray(nums){
+            let i = 0;
+            for(num of nums){
+                if(num === 0)
+                    return;
+                nums[i++]=num*2;
+            }
+        }
+        console.log(nums);
+
+
+    </script>
+</body>
+
+</html>

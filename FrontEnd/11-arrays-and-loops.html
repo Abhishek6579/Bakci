@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arrays and Loops</title>
+</head>
+
+<body>
+    <script>
+
+        const myArray = [10, 20, 30]; //This is an array.
+
+        console.log(myArray);
+        myArray[0] = 20;
+
+        console.log(myArray[0]);
+
+        console.log(typeof myArray);
+        console.log(Array.isArray(myArray));
+
+        myArray.push(100)
+        console.log(myArray);
+
+        [1, 'hello', true, { name: 'socks' }]
+
+        myArray.splice(0, 1); // splice(startingIndex, noOfValues) mehtod
+        console.log(myArray);
+
+
+        let i = 1;
+        while (i <= 5) {
+            console.log(i++);
+        }
+
+        for (let i = 1; i <= 5; i++) {
+            console.log(i);
+        }
+
+        //For non standard loop we use while loop (one that doesn't have loop variable that we increase every time and increment step)
+        let randomNumber = 0;
+        while (randomNumber < 0.5) {
+            randomNumber = Math.random();
+        }
+        console.log(randomNumber);
+
+        //Looping through an array
+        const todoList = ['Make Dinner', 'Wash Dishes', 'Watch Youtube'];
+        for (let index = 0; index<todoList.length; index++)
+            console.log(todoList[index]);
+
+        //Accumulator pattern
+        const nums = [1, 1, 3];
+        let total = 0; //Accumulator variable
+        for(let i = 0; i<nums.length; i++){
+            total += nums[i];
+        }
+        console.log(total);
+
+        //Accumulator pattern
+        const numsDoubled = []; //Accumulator variable
+        for(let i = 0; i<nums.length; i++)
+            numsDoubled.push(nums[i]*2);
+        console.log(numsDoubled);
+
+    </script>
+</body>
+
+</html>

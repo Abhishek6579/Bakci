@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="" class="js-button">Click</button>
+    <script>
+        const array = [
+            'make dishes',
+            'wash dishes',
+            'watch youtube'
+        ]
+        //Preferred way to loop through an array, index isn't a mandatory parameter
+        array.forEach((value,index) => {
+            if(value==='wash dishes')
+                return; //Since this isn't a loop we cannot use continue statement.
+            console.log(index + '  ' + value);
+        });
+
+        const regularFunction = function(param,param2){
+            consol.log('hello');
+        }
+        //Arrow functions : Works the same way as a regular function
+
+        const arrowFunction = (param,param2) => {
+            console.log('hello');
+        }
+
+        //Differences arow functions have shorcuts
+        const oneParam= param => { // When it has one param brackets are optional
+            console.log(param + 1);
+        }
+        oneParam(2);
+
+        const oneLine = () => 2 +3; //One line return the value
+        console.log(oneLine());
+
+        const object = {
+            method: () => {
+            },
+            method() {}  //recommended
+        }
+
+        const buttonElement = document.querySelector('.js-button');
+        const addEventListener = () => console.log('click');
+        //Lets us add mubliple listeners to one event also we can remove
+        buttonElement.addEventListener('click', addEventListener);
+        buttonElement.addEventListener('click', ()=>{
+            console.log('click2');
+        });
+
+        buttonElement.removeEventListener('click', addEventListener)
+
+    </script>
+</body>
+</html>

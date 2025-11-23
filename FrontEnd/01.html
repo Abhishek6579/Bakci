@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Modern Form</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-start: #071226;
+      --bg-end: #071827;
+      --card: rgba(255, 255, 255, 0.03);
+      --muted: #9aa7b8;
+      --accent: #7c3aed;
+      --accent-weak: rgba(124, 58, 237, 0.12);
+      --glass-border: rgba(255, 255, 255, 0.06);
+      --radius: 12px;
+    }
+
+    /* Page */
+    html,
+    body {
+      height: 100%;
+      margin: 0;
+      font-family: "Inter", system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial;
+      background: linear-gradient(180deg, var(--bg-start), var(--bg-end));
+      color: #e6eef8;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    .wrap {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 28px;
+    }
+
+    /* Card / Form */
+    form.details {
+      width: 100%;
+      max-width: 420px;
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0.01));
+      border: 1px solid var(--glass-border);
+      border-radius: var(--radius);
+      padding: 24px;
+      box-shadow: 0 10px 30px rgba(2, 6, 23, 0.6);
+      backdrop-filter: blur(6px);
+    }
+
+    form .title {
+      margin: 0 0 12px 0;
+      font-size: 18px;
+      font-weight: 700;
+      letter-spacing: 0.2px;
+      color: #f6fbff;
+    }
+
+    .form-row {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      margin-top: 12px;
+      padding: 2px;
+    }
+
+    label.form-group {
+      font-size: 13px;
+      color: var(--muted);
+      font-weight: 600;
+    }
+
+    input.form-control {
+      width: 100%;
+      padding: 12px 10px;
+      border-radius: 10px;
+      border: 1px solid var(--glass-border);
+      background: var(--card);
+      color: inherit;
+      font-size: 14px;
+      transition: box-shadow .18s ease, border-color .18s ease, transform .08s ease;
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.02);
+    }
+
+    input.form-control::placeholder {
+      color: rgba(255, 255, 255, 0.25);
+    }
+
+    input.form-control:focus {
+      outline: none;
+      border-color: var(--accent);
+      box-shadow: 0 6px 24px rgba(2, 6, 23, 0.45), 0 0 0 6px var(--accent-weak);
+      transform: translateY(-1px);
+    }
+
+    /* number input adjustments */
+    input[type=number]::-webkit-inner-spin-button,
+    input[type=number]::-webkit-outer-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+
+    .form-actions {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 18px;
+      gap: 12px;
+    }
+
+    .btn {
+      appearance: none;
+      -webkit-appearance: none;
+      border: 0;
+      background: linear-gradient(90deg, var(--accent), #5b21b6);
+      color: white;
+      padding: 10px 14px;
+      border-radius: 10px;
+      cursor: pointer;
+      font-weight: 600;
+      box-shadow: 0 6px 18px rgba(124, 58, 237, 0.25);
+      transition: transform .12s ease, box-shadow .12s ease;
+    }
+
+    .btn:active {
+      transform: translateY(1px)
+    }
+
+    .btn.secondary {
+      background: transparent;
+      border: 1px solid var(--glass-border);
+      color: var(--muted);
+      box-shadow: none;
+    }
+
+    @media (max-width:480px) {
+      form.details {
+        padding: 18px;
+      }
+
+      .wrap {
+        padding: 18px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+    <form action="" class="details" novalidate>
+      <h2 class="title">Your details</h2>
+
+      <div class="form-row">
+        <label for="Name" class="form-group">Name</label>
+        <input type="text" id="Name" name="Name" class="form-control" placeholder="Jane Doe" required>
+      </div>
+
+      <div class="form-row">
+        <label for="Email" class="form-group">Email</label>
+        <input type="email" id="Email" name="Email" class="form-control" placeholder="name@example.com" required>
+      </div>
+
+      <div class="form-row">
+        <label for="number" class="form-group">Number</label>
+        <input type="number" id="number" name="number" class="form-control" placeholder="e.g. 5551234567">
+      </div>
+
+      <div class="form-actions">
+        <button type="button" class="btn secondary" 
+        onclick="
+          alert('Good job!!');
+          ">Cancel</button>
+        <button type="submit" class="btn">Save</button>
+      </div>
+    </form>
+  </div>
+
+  <!-- <script>
+    alert("Hello");
+  </script> -->
+
+  <script>
+    
+  </script>
+</body>
+
+</html>

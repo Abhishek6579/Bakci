@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Issues with numbers</title>
+</head>
+
+<body>
+  <script>
+    /*
+  7.99 + 10 will display 17.9900000002
+  To solve this problem when dealing with money. we use number.toFixed(n); method.
+  n = number of digits after the decimal point (0–100);
+
+  Important Note : This method returns a string type value.
+
+  */
+    console.log(7.99 + 10);
+    console.log((7.99 + 10).toFixed(2));
+
+    /*
+    Modern method to solve this issue.
+    Basic Syntax : const formatted = new Intl.NumberFormat([locales], [options]).format(number);  
+    locales : 
+    A locale is basically a region or country setting that defines how numbers, dates, and currencies should look for users in that area.
+
+    Example locales:
+
+    'en-US' → English (United States)
+
+    'en-IN' → English (India)
+
+    fr-FR' → French (France)
+
+    'de-DE' → German (Germany)
+
+    Each locale has its own rules for how to display:
+
+    Thousand separators (, or .)
+
+    Decimal points (. or ,)
+
+    Digit grouping (2 or 3 digits per group)
+
+    Currency placement (before or after number.
+
+    also the [options] gives us specific symbols fo the currency.
+    */
+
+    let cost = 10 + 7.99;
+    const formatted = new Intl.NumberFormat('en-US', {
+      style: 'currency',
+      currency: 'INR'
+    }).format(cost);
+
+    console.log(formatted);
+
+  </script>
+</body>
+
+</html>

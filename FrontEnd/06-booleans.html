@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booleans Truthy and Falsy Values</title>
+</head>
+
+<body>
+    <script>
+
+        //Falsy values include : false 0 '' NaN undefined null
+
+        if (0)
+            console.log('This is true');
+        else
+            console.log('This is false');
+
+        const cartQuantity = 8;
+        if(cartQuantity)
+            console.log('Cart has items in it.');
+        else
+            console.log('Cart is empty');
+
+        let variable1;
+        console.log(variable1); //undefined
+
+        const result = 0 ? 'truthy':'falsy';
+        console.log(result);
+
+        // && operator is also known as Guard operator 
+        // This is because if left to right any one of them is false rest on the right side are not executed
+        console.log(false && console.log(result)); //
+
+        const message = 5 && 'hello';
+        console.log(message);
+
+        // || operator(Default operator) also short circuits. if it gets atleast one true from left to right it stops executing the rest of the parts.
+
+        const currency = 'EUR' || 'USD'; //default is EURO
+        console.log(currency);
+
+        const currency2 = undefined || 'USD'; //default was not available
+        console.log(currency2); 
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .js-button {
+            background-color: rgb(216, 216, 216);
+            padding: 10px 40px;
+            color: black;
+            font-family: Arial;
+            font-weight: 200;
+            border: transparent;
+            font-size: 1.5rem;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+
+        /* .cart-button {
+            background-color: rgb(255, 220, 20);
+            color: black;
+            font-size: 1.5rem;
+            padding: 10px 60px;
+            border: transparent;
+            border-radius: 30px;
+            font-weight: 200;
+            font-family: Arial;
+            margin-bottom: 1.5rem;
+        } */
+    </style>
+</head>
+
+<body>
+
+    <!-- <button class="js-button cart-button">Add to cart</button><br> -->
+
+    <button class="js-button gaming-button" onclick="changeState('gaming');">Gaming</button>
+    <button class="js-button music-button" onclick="changeState('music');">Music</button>
+    <button class="js-button tech-button" onclick="changeState('tech');">Tech</button>
+
+    <script>
+        // .classList has another method contains which checks wether the class is present in the object.
+        // console.log(typeof document.querySelector('.js-button').classList.contains('cart-button'));
+        let state = {
+            gaming: 0,
+            music: 0,
+            tech: 0
+        }
+        function changeState(type) {
+            const button = document.querySelector(`.${type}-button`);
+            if (state[`${type}`] === 0) {
+                resetState(); 
+                button.style.backgroundColor = 'black';
+                button.style.color = 'white';
+                state[`${type}`] = 1;
+            }
+            else {
+                button.style.backgroundColor = 'rgb(216, 216, 216)';
+                button.style.color = 'black';
+                state[`${type}`] = 0;
+            }
+        }
+
+        function resetState() {
+            const buttons = document.querySelectorAll('.js-button');
+            buttons.forEach(button => {
+                button.style.backgroundColor = 'rgb(216, 216, 216)';
+                button.style.color = 'black';
+            });
+            state = {
+                gaming: 0,
+                music: 0,
+                tech: 0
+
+            };
+        }
+
+    </script>
+</body>
+
+</html>

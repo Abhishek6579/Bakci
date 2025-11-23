@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Functions</title>
+</head>
+<body>
+    <script>
+        function function1(){
+            console.log('Hello');
+            console.log(2+2);
+        }
+
+        // function1();
+
+        function calcTax(income, taxPercent = 5){ //Default value
+            console.log(income*taxPercent/100);
+        }
+
+        calcTax(5000,10); //500
+        calcTax(5000); //250
+
+        calcTax(5000); //Default value 5 will be used o/p: 250
+        calcTax(5000,undefined) //Default value 5 will be used o/p: 250
+        calcTax(5000,null); // No default value 5 will not be used now o/p: 0
+    </script>
+</body>
+</html>

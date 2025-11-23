@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>array example</title>
+</head>
+<body>
+    <script>
+        const words = ['apple', 'grape', 'apple', 'grape','mango'];
+        let result = {};
+        countWords(words);
+        function countWords(words) {
+            let wordsObject
+            for(let word of words){
+                if(result[word])
+                    result[word]++;
+                else
+                    result[word]=1;
+            }
+        }
+        console.log(result);
+    </script>
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        /*
+        .filter();
+        --Creates a new array
+        --Puts value in the array if function returns true
+        --Doesn't if it the function returns false
+        */
+        console.log([1, -3, 5].filter(value => value >= 0));
+        /*
+        .map()
+        Creates new array, whatever we return is add to the new array
+        */
+        console.log([1, 1, 3].map(value => value * 3));
+        /*
+        Closure:
+        -If a function has acess to a value
+        -It will always have acess to that value
+        */
+        function outer() {
+            let count = 0;
+            function inner() {
+                count++;
+                console.log(count);
+            }
+            return inner;
+        };
+        let counter = outer();
+        counter();
+        //Closure = function + its outere variables
+        //Even though outer() has aleready finished inner() stil remember the value count
+        counter();
+
+        counter = outer();
+        counter();
+
+        function bankAccount() {
+            let balance = 1000;
+
+            return function deposit(amount) {
+                balance += amount;
+                console.log(`Updated balance: ${balance}`);
+            };
+        }
+
+        const myAccount = bankAccount();
+        myAccount(500); // 1500
+        myAccount(200); // 1700
+
+    </script>
+</body>
+
+</html>

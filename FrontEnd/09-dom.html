@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document Object Model</title>
+</head>
+
+<body>
+    <button>Hello</button>
+    <button class="js-button">JS Button</button>
+    <script>
+        /*
+        DOM is a built in object provided by Javascript.
+        The document object represents/ models the webpage. or Document Object Model
+        
+        */
+
+        // document.body.innerHTML = 'hello';
+        document.title = 'Good Job';
+        console.log(document.title);
+        // The DOM combines Javascript and html together. This is achieved by converting the HTML element to java script object.
+        console.log(typeof document.body);
+
+        console.log(document.querySelector('button')); // This will get the first button element in the html page
+        document.querySelector('button').innerHTML = 'Changed';
+        document.querySelector('.js-button').innerHTML = 'Changed'; // Class Selector Common practice is if an HTML item is being used inside java script we should name it as js-<name>. also if stored in variable after query same it as <name>Element
+        
+    </script>
+</body>
+</html>

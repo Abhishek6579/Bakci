@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Json</title>
+</head>
+<body>
+    <!-- We use JSOn when we send data between computers as json is more universal and is understood by all programming languages. -->
+     <script>
+        const product = {
+            name: 'socks',
+            price: 1090,
+            ['delivery-time']: '1day',
+            rating: {
+                stars: 4.5,
+                count: 87
+            },
+            fun : function function1() {
+                console.log('funciton inside the object');
+            }
+        };
+
+        const jsonString = JSON.stringify(product);
+        //To convert js object to JSON It cannot convert functions.
+        console.log(typeof jsonString);
+        console.log(jsonString);
+
+        const jsObject = JSON.parse(jsonString);
+        console.log(jsObject);
+     </script>
+</body>
+</html>

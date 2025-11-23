@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced functions</title>
+</head>
+<body>
+    <script>
+
+        greeting();
+        //This method has two features hoisting and readability
+        //Hoisting means we don't have to worry about the sequence in code i.e., we can call the method even before it was written.
+        function greeting(){
+            console.log('hello');
+        }
+        //Functions are values for example number strings and values
+        const num = 2;
+        //Anonymous function - function without a name
+        const function1 = function(){ 
+            console.log('hello');
+        }
+        console.log(function1);
+        console.log(typeof function1);
+        function1();
+
+        //Object 
+        const object1 = {
+            name:'object1',
+            //Another example of destructuring
+            method1(){
+                console.log('method1');
+            }
+        }
+        object1.method1();
+        function run(param){ //Funciton which is passed is called value;
+            param();
+        }
+        run(function(){
+            console.log('hello4');
+        })
+
+        //Set timeout allows us to run a function in the future
+        //Asychronous code: computer won't wait for its execution, but will start with other
+        setTimeout(function(){
+            console.log('timeout');
+        },3000);// <function_to_run> <TIme in millisecond>
+
+        console.log('next line');
+
+        //Advantage is that it won't stop the execution.
+        //It will run the program every 3 seconds
+        setInterval(function(){
+            console.log('inerval');
+        },3000);
+
+
+    </script>
+</body>
+</html>
